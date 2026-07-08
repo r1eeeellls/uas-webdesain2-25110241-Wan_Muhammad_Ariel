@@ -6,56 +6,59 @@
     <title>Risol Daily Ruby Pekanbaru - Premium Culinary</title>
     <!-- Bootstrap 4 CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <!-- Font Awesome Pro / Icons -->
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <!-- Google Fonts Google: Poppins & Montserrat ala E-Commerce Streetwear -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- ================= PREMIUM NAVBAR AREA (3SECOND STYLE) ================= -->
+    <!-- ================= ANNOUNCEMENT BAR ================= -->
     <div class="announcement-bar bg-black text-center text-white py-2 font-weight-bold">
-        <i class="fas fa-bolt text-warning mr-2"></i> PROMO UAS: BELI 10 GRATIS 1 VARIAN MAYO - KHUSUS BULAN INI!
+        <i class="fas fa-bolt text-warning mr-2"></i> PROMO SPESIAL: BELI 10 GRATIS 1 VARIAN MAYO — KHUSUS BULAN INI!
     </div>
     
-    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top navbar-premium">
+    <!-- ================= COMMERCIAL NAVBAR AREA ================= -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top navbar-premium shadow-sm">
         <div class="container">
-            <a class="navbar-brand-premium" href="#" data-target-page="home">
-                DAILY<span class="text-stroke">RUBY</span>
+            <a class="navbar-brand navbar-brand-premium d-flex align-items-center" href="#" data-target-page="home">
+                DAILY<span class="text-stroke ml-1">RUBY</span>
             </a>
-            <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar">
+            <button class="navbar-toggler custom-toggler border-0" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="mainNavbar">
                 <ul class="navbar-nav ml-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link-premium active" href="#" data-target-page="home">HOME</a></li>
-                    <li class="nav-item"><a class="nav-link-premium" href="#" data-target-page="menu">KATALOG MENU</a></li>
-                    <li class="nav-item"><a class="nav-link-premium" href="#" data-target-page="about">TENTANG KAMI</a></li>
-                    <li class="nav-item"><a class="nav-link-premium" href="#" data-target-page="contact">KONTAK & LOKASI</a></li>
-                    <li class="nav-item ml-lg-3 d-none d-lg-block">
-                        <span class="badge badge-premium-dark"><i class="fas fa-shopping-bag mr-1"></i> JAM BUKA: 08.00 - 22.00[span_0](start_span)[span_0](end_span)</span>
+                    <li class="nav-item"><a class="nav-link nav-link-premium active mx-1" href="#" data-target-page="home">BERANDA</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-premium mx-1" href="#" data-target-page="menu">KATALOG MENU</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-premium mx-1" href="#" data-target-page="about">TENTANG KAMI</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-premium mx-1" href="#" data-target-page="contact">KONTAK & LOKASI</a></li>
+                    <li class="nav-item ml-lg-3 mt-3 mt-lg-0">
+                        <span class="badge badge-premium-dark d-flex align-items-center justify-content-center">
+                            <i class="fas fa-clock mr-2 text-warning"></i> ORDER: 08.00 - 22.00 WIB
+                        </span>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- ================= CONTAINER UTAMA SPA ================= -->
+    <!-- ================= MAIN CONTAINER (SPA) ================= -->
     <main class="main-wrapper">
 
         <!-- ================= SECTION 1: HOME ================= -->
         <section id="page-home" class="page-section active-page">
-            <!-- Hero Jumbotron Premium Minimalism -->
-            <div class="jumbotron-premium">
+            <!-- Hero Jumbotron -->
+            <div class="jumbotron jumbotron-premium my-0">
                 <div class="container text-center py-5">
                     <div class="d-inline-block badge-category mb-3">PREMIUM STREET FOOD</div>
                     <h1 class="hero-main-title shadow-solid">CRISPY OUTSIDE,<br>LUMER INSIDE.</h1>
-                    <p class="hero-sub-title text-uppercase font-weight-bold mx-auto mt-3">Risol Produksi Lokal Pekanbaru dengan Standar Higienis Terbaik & Cita Rasa Berkelas[span_1](start_span)[span_1](end_span).</p>
+                    <p class="hero-sub-title text-uppercase font-weight-bold mx-auto mt-3">Garing Renyah di Luar, Meleleh Sempurna di Dalam. Risol Premium khas Pekanbaru dengan Bahan Pilihan Terbaik.</p>
                     <div class="mt-4">
                         <button class="btn btn-premium-action btn-lg mr-2 mb-2" id="btn-explore-menu" data-target-page="menu">
-                            EKSPLOR MENU <i class="fas fa-shopping-cart ml-2"></i>
+                            LIHAT MENU <i class="fas fa-shopping-bag ml-2"></i>
                         </button>
                         <button class="btn btn-premium-outline btn-lg mb-2" id="btn-learn-about" data-target-page="about">
                             CERITA KAMI
@@ -64,10 +67,10 @@
                 </div>
             </div>
 
-            <!-- Slide Show / Carousel Modern Full Border (3Second E-Commerce Banner Look) -->
-            <div class="container my-5">
+            <!-- Carousel Section -->
+            <div class="container my-5 shadow-section p-4 rounded bg-white">
                 <div class="section-title-box text-center mb-4">
-                    <h2 class="title-bold">WEEKLY BEST SELLER <span class="badge badge-danger text-uppercase p-2">Hot Item</span></h2>
+                    <h2 class="title-bold text-uppercase">Menu Terlaris Minggu Ini <span class="badge badge-danger text-uppercase ml-2 p-2 px-3 align-middle" style="font-size: 12px; border-radius: 0;">Hot Item</span></h2>
                 </div>
                 <div id="premiumCarousel" class="carousel slide border-box-premium shadow-solid-sm" data-ride="carousel">
                     <ol class="carousel-indicators custom-indicators">
@@ -81,7 +84,7 @@
                             </div>
                             <div class="carousel-caption-premium">
                                 <h3 class="font-weight-bold text-white text-uppercase">01 / Risol Mayo Premium</h3>
-                                <p class="mb-0 text-white font-weight-medium">Isian Smoked Beef tebal, potongan telur rebus, dan racikan mayones super melimpah lumer maksimal.</p>
+                                <p class="mb-0 text-white font-weight-medium">Isian *smoked beef* premium yang tebal, potongan telur rebus segar, dan limpahan saus mayones racikan rahasia yang lumer maksimal di setiap gigitan.</p>
                             </div>
                         </div>
                         <div class="carousel-item">
@@ -90,14 +93,14 @@
                             </div>
                             <div class="carousel-caption-premium">
                                 <h3 class="font-weight-bold text-white text-uppercase">02 / Risol Choco Lava</h3>
-                                <p class="mb-0 text-white font-weight-medium">Sensasi cokelat Belgia manis pekat yang meleleh lumer seketika di dalam mulut saat hangat.</p>
+                                <p class="mb-0 text-white font-weight-medium">Sensasi premium cokelat Belgia manis pekat yang meleleh lumer seketika di dalam mulut. Disajikan hangat untuk momen santai terbaikmu.</p>
                             </div>
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-target="#premiumCarousel" data-slide="prev">
+                    <button class="carousel-control-prev border-0 bg-transparent" type="button" data-target="#premiumCarousel" data-slide="prev">
                         <span class="carousel-control-custom-icon"><i class="fas fa-chevron-left"></i></span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-target="#premiumCarousel" data-slide="next">
+                    <button class="carousel-control-next border-0 bg-transparent" type="button" data-target="#premiumCarousel" data-slide="next">
                         <span class="carousel-control-custom-icon"><i class="fas fa-chevron-right"></i></span>
                     </button>
                 </div>
@@ -109,42 +112,40 @@
             <div class="container my-5">
                 <div class="section-title-box text-center mb-4">
                     <h2 class="title-bold">PRODUCT CATALOGUE</h2>
-                    <p class="text-muted font-weight-bold">PILIH KATEGORI MENU ANDA DI BAWAH INI</p>
+                    <p class="text-muted font-weight-bold">EKSPLORASI VARIAN RASA TERBAIK KAMI</p>
                 </div>
                 
-                <!-- Tab Menu Navigasi Jelas & Kotak Tegas -->
+                <!-- Tab Menu -->
                 <ul class="nav nav-pills justify-content-center mb-5 tab-premium-wrap p-2" id="menuTabs" role="tablist">
                     <li class="nav-item m-1">
-                        <a class="nav-link active tab-premium-btn" id="gurih-tab" data-toggle="tab" href="#gurih" role="tab">
-                            <i class="fas fa-hamburger mr-2"></i>VARIAN GURIH / ASIN
-                        </a>
+                        <a class="nav-link active tab-premium-btn" id="gurih-tab" data-toggle="tab" href="#gurih" role="tab"><i class="fas fa-hamburger mr-2"></i>VARIAN GURIH / ASIN</a>
                     </li>
                     <li class="nav-item m-1">
-                        <a class="nav-link tab-premium-btn" id="manis-tab" data-toggle="tab" href="#manis" role="tab">
-                            <i class="fas fa-cookie mr-2"></i>VARIAN MANIS MURNI
-                        </a>
+                        <a class="nav-link tab-premium-btn" id="manis-tab" data-toggle="tab" href="#manis" role="tab"><i class="fas fa-cookie mr-2"></i>VARIAN MANIS MURNI</a>
                     </li>
                 </ul>
 
-                <!-- Grid Katalog Produk Interaktif -->
+                <!-- Grid Katalog -->
                 <div class="tab-content" id="menuTabsContent">
                     <!-- Kategori Gurih -->
                     <div class="tab-pane fade show active" id="gurih" role="tabpanel">
                         <div class="row">
                             <div class="col-md-6 col-lg-4 mb-4">
                                 <div class="card card-premium h-100">
-                                    <div class="card-badge-top bg-black text-white">GURIH VARIANT</div>
+                                    <div class="card-badge-top bg-black text-white">BEST SELLER</div>
                                     <div class="card-body d-flex flex-column justify-content-between p-4">
-                                        <div>
+                                        <div class="mt-2">
                                             <h4 class="product-title font-weight-bold text-black text-uppercase">Risol Mayo Premium</h4>
-                                            <p class="product-desc text-secondary font-weight-bold">Smoked beef berkualitas, irisan telur rebus, dan saus mayo creamy rahasia.</p>
+                                            <p class="product-desc text-secondary">Kombinasi daging asap pilihan, irisan telur rebus, dan balutan saus mayo super creamy.</p>
                                         </div>
                                         <div>
-                                            <div class="price-tag mb-3">Rp Premium Quality</div>
+                                            <div class="price-tag mb-3">Rp 5.000 <span class="text-muted font-weight-normal small">/ pcs</span></div>
+                                            <!-- Tooltip diimplementasikan pada tombol Quick View sesuai prosedur gambar -->
                                             <button class="btn btn-premium-card btn-block font-weight-bold btn-detail-trigger" 
                                                     data-toggle="modal" data-target="#modalDetailRisol" 
                                                     data-name="Risol Mayo Premium" 
-                                                    data-desc="Diproduksi secara higienis menggunakan kulit risol buatan sendiri yang lentur dan lembut, dibalut tepung panir pilihan bercita rasa renyah garing. Diisi dengan potongan premium smoked beef, irisan telur rebus segar, serta lumuran saus mayones racikan khas Risol Daily Ruby.">
+                                                    data-desc="Diproduksi secara higienis menggunakan kulit risol buatan sendiri yang lentur dan lembut, dibalut tepung panir pilihan bercita rasa renyah garing. Diisi dengan potongan premium smoked beef, irisan telur rebus segar, serta lumuran saus mayones racikan khas Risol Daily Ruby."
+                                                    data-toggle-tooltip="tooltip" data-placement="top" title="Klik untuk info detail & komposisi">
                                                 QUICK VIEW <i class="fas fa-eye ml-1"></i>
                                             </button>
                                         </div>
@@ -153,18 +154,19 @@
                             </div>
                             <div class="col-md-6 col-lg-4 mb-4">
                                 <div class="card card-premium h-100">
-                                    <div class="card-badge-top bg-black text-white">GURIH VARIANT</div>
+                                    <div class="card-badge-top bg-black text-white">TRADISIONAL</div>
                                     <div class="card-body d-flex flex-column justify-content-between p-4">
-                                        <div>
+                                        <div class="mt-2">
                                             <h4 class="product-title font-weight-bold text-black text-uppercase">Risol Sayur Ayam</h4>
-                                            <p class="product-desc text-secondary font-weight-bold">Tumisan wortel, potongan kentang dadu, dan suwiran daging ayam padat berempah.</p>
+                                            <p class="product-desc text-secondary">Tumisan wortel manis, kentang dadu gurih, dan suwiran daging ayam melimpah kaya bumbu.</p>
                                         </div>
                                         <div>
-                                            <div class="price-tag mb-3">Rp Tradisional Rasa</div>
+                                            <div class="price-tag mb-3">Rp 4.000 <span class="text-muted font-weight-normal small">/ pcs</span></div>
                                             <button class="btn btn-premium-card btn-block font-weight-bold btn-detail-trigger" 
                                                     data-toggle="modal" data-target="#modalDetailRisol" 
                                                     data-name="Risol Sayur Ayam" 
-                                                    data-desc="Kombinasi isian tumis sayur wortel manis dan kentang gurih yang dimasak matang menggunakan bumbu rempah tradisional nusantara asli, dipadukan suwiran daging dada ayam asli melimpah.">
+                                                    data-desc="Kombinasi isian tumis sayur wortel manis dan kentang gurih yang dimasak matang menggunakan bumbu rempah tradisional nusantara asli, dipadukan suwiran daging dada ayam asli melimpah."
+                                                    data-toggle-tooltip="tooltip" data-placement="top" title="Klik untuk info detail & komposisi">
                                                 QUICK VIEW <i class="fas fa-eye ml-1"></i>
                                             </button>
                                         </div>
@@ -180,16 +182,17 @@
                                 <div class="card card-premium h-100">
                                     <div class="card-badge-top bg-success text-white">SWEET VARIANT</div>
                                     <div class="card-body d-flex flex-column justify-content-between p-4">
-                                        <div>
+                                        <div class="mt-2">
                                             <h4 class="product-title font-weight-bold text-black text-uppercase">Risol Choco Lava</h4>
-                                            <p class="product-desc text-secondary font-weight-bold">Isian pasta cokelat kental berkualitas tinggi yang diproses lumer meleleh.</p>
+                                            <p class="product-desc text-secondary">Isian pasta cokelat Belgia premium kental yang diproses khusus hingga meleleh sempurna.</p>
                                         </div>
                                         <div>
-                                            <div class="price-tag mb-3">Rp Melted Sweet</div>
+                                            <div class="price-tag mb-3">Rp 5.000 <span class="text-muted font-weight-normal small">/ pcs</span></div>
                                             <button class="btn btn-premium-card btn-block font-weight-bold btn-detail-trigger" 
                                                     data-toggle="modal" data-target="#modalDetailRisol" 
                                                     data-name="Risol Choco Lava" 
-                                                    data-desc="Isian cokelat Belgian premium kental yang diproses khusus di dalam balutan kulit risol agar meleleh lumer seketika di lidah saat digigit selagi hangat. Cocok bagi pencinta camilan manis kelas atas.">
+                                                    data-desc="Isian cokelat Belgian premium kental yang diproses khusus di dalam balutan kulit risol agar meleleh lumer seketika di lidah saat digigit selagi hangat. Cocok bagi pencinta camilan manis kelas atas."
+                                                    data-toggle-tooltip="tooltip" data-placement="top" title="Klik untuk info detail & komposisi">
                                                 QUICK VIEW <i class="fas fa-eye ml-1"></i>
                                             </button>
                                         </div>
@@ -212,55 +215,67 @@
                 <div class="row">
                     <div class="col-lg-7 mb-4">
                         <div class="p-4 bg-white border-box-premium shadow-solid-sm h-100">
-                            <h3 class="font-weight-bold text-black border-bottom pb-2 mb-3">RISOL DAILY RUBY PEKANBARU</h3>
-                            <p class="font-weight-bold text-success text-uppercase mb-3"><i class="fas fa-certificate mr-2"></i> 100% Halal, Higienis, Tanpa Pengawet Buatan[span_2](start_span)[span_2](end_span)</p>
-                            <p class="text-dark font-weight-medium text-justify line-height-lg">Kami berkomitmen penuh menyajikan jajanan risol premium dengan standar kebersihan tinggi di Kota Pekanbaru[span_3](start_span)[span_3](end_span). Setiap adonan kulit dan isian dibuat segar setiap harinya tanpa menggunakan zat pengawet berbahaya demi menjaga kesehatan konsumen setia kami[span_4](start_span)[span_4](end_span).</p>
+                            <h3 class="font-weight-bold text-black border-bottom pb-2 mb-3">DAILY RUBY PEKANBARU</h3>
                             
-                            <!-- Accordion FAQ Premium Interaktif -->
+                            <!-- Popover diterapkan pada teks higienitas bahan sesuai panduan gambar -->
+                            <p class="font-weight-bold text-success text-uppercase mb-3 highlight-popover" 
+                               style="cursor: pointer;"
+                               data-toggle="popover" 
+                               data-trigger="hover" 
+                               data-placement="bottom"
+                               data-title="Detail Komitmen Higienis" 
+                               data-content="Semua bahan baku kami dicuci bersih secara menyeluruh, menggunakan air mengalir, diproses dengan perlengkapan sanitasi lengkap, serta dikemas secara kedap udara (vacuum pack) demi menjaga kualitas kesegaran rasa.">
+                                <i class="fas fa-certificate mr-2"></i> 100% Halal, Higienis, & Tanpa Pengawet Buatan <i class="far fa-question-circle text-muted small"></i>
+                            </p>
+                            
+                            <p class="text-dark text-justify line-height-lg font-weight-medium">Kami berkomitmen penuh untuk menyajikan jajanan kuliner risoles kelas premium dengan standar kebersihan tertinggi di Kota Pekanbaru[cite: 3]. Setiap adonan kulit dan isian kami racik segar setiap harinya tanpa melibatkan bahan pengawet berbahaya demi memberikan rasa aman serta kebaikan konsumsi bagi seluruh pelanggan setia kami[cite: 3].</p>
+                            
+                            <!-- Accordion FAQ -->
                             <h5 class="mt-4 font-weight-bold text-black text-uppercase"><i class="fas fa-question-circle text-warning mr-2"></i> Frequently Asked Questions (FAQ)</h5>
                             <div id="faqAccordion" class="mt-3">
                                 <div class="faq-item border-box-premium-thin mb-2">
                                     <div class="faq-header p-3 bg-light-gray" id="heading1">
-                                        <button class="btn btn-block text-left text-black font-weight-bold d-flex justify-content-between align-items-center" data-toggle="collapse" data-target="#faqCollapse1">
-                                            <span>Sedia Varian Frozen / Mentah Beku?</span>
+                                        <button class="btn btn-block text-left text-black font-weight-bold d-flex justify-content-between align-items-center border-0 bg-transparent" data-toggle="collapse" data-target="#faqCollapse1">
+                                            <span>Apakah Menyediakan Varian Frozen / Mentah Beku?</span>
                                             <i class="fas fa-chevron-down faq-icon"></i>
                                         </button>
                                     </div>
-                                    <div id="faqCollapse1" class="collapse show" data-parent="#faqAccordion">
-                                        <div class="faq-body p-3 bg-white text-dark font-weight-medium">
-                                            Tentu ada! Kami menyediakan versi frozen khusus dalam kemasan kedap udara (vacuum pack) yang aman disimpan di dalam freezer hingga jangka waktu 2 minggu lamanya tanpa merubah rasa asli.
+                                    <div id="faqCollapse1" class="collapse show" aria-labelledby="heading1" data-parent="#faqAccordion">
+                                        <div class="faq-body p-3 bg-white text-dark font-weight-medium text-secondary">
+                                            Tentu saja ada! Kami menyediakan varian produk *frozen* khusus dalam kemasan kedap udara (*vacuum pack*) super aman yang dapat bertahan di dalam *freezer* hingga jangka waktu 2 minggu lamanya tanpa merusak cita rasa asli produk[cite: 3].
                                         </div>
                                     </div>
                                 </div>
                                 <div class="faq-item border-box-premium-thin mb-2">
                                     <div class="faq-header p-3 bg-light-gray" id="heading2">
-                                        <button class="btn btn-block text-left text-black font-weight-bold d-flex justify-content-between align-items-center" data-toggle="collapse" data-target="#faqCollapse2">
+                                        <button class="btn btn-block text-left text-black font-weight-bold d-flex justify-content-between align-items-center border-0 bg-transparent" data-toggle="collapse" data-target="#faqCollapse2">
                                             <span>Menerima Pesanan Acara Besar / Katering?</span>
                                             <i class="fas fa-chevron-down faq-icon"></i>
                                         </button>
                                     </div>
-                                    <div id="faqCollapse2" class="collapse" data-parent="#faqAccordion">
-                                        <div class="faq-body p-3 bg-white text-dark font-weight-medium">
-                                            Ya, kami melayani pesanan partai besar untuk keperluan katering rapat kantor, snack box arisan, pesta pernikahan, dan kumpul keluarga dengan konfirmasi pemesanan minimal H-2 acara.
+                                    <div id="faqCollapse2" class="collapse" aria-labelledby="heading2" data-parent="#faqAccordion">
+                                        <div class="faq-body p-3 bg-white text-dark font-weight-medium text-secondary">
+                                            Ya, kami melayani pesanan partai besar untuk katering rapat instansi, *snack box* arisan, perhelatan pernikahan, maupun kumpul keluarga besar dengan konfirmasi pesanan selambat-lambatnya H-2 acara[cite: 3].
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Jam Operasional dengan Struktur Highlight Mewah -->
+                    
+                    <!-- Jam Operasional dengan Struktur Highlight Alert Mewah sesuai panduan gambar -->
                     <div class="col-lg-5 mb-4">
-                        <div class="bg-black text-white p-5 border-box-premium shadow-solid-sm text-center h-100 d-flex flex-column justify-content-center">
+                        <div class="alert alert-dark border-box-premium shadow-solid-sm text-center h-100 d-flex flex-column justify-content-center p-5 bg-black text-white m-0">
                             <div class="mb-2"><i class="fas fa-store-alt fa-3x text-warning"></i></div>
                             <h3 class="font-weight-bold tracking-wider text-warning mb-2">STORE HOURS</h3>
-                            <h4 class="font-weight-bold text-white-50 text-uppercase mb-4">SETIAP HARI TANPA LIBUR[span_5](start_span)[span_5](end_span)</h4>
+                            <h4 class="font-weight-bold text-white-50 text-uppercase mb-4">Setiap Hari Tanpa Libur[cite: 3]</h4>
                             <div class="time-display-box border border-warning py-3 rounded">
                                 <h2 class="display-4 font-weight-bold text-white m-0">08:00</h2>
                                 <p class="m-0 text-warning font-weight-bold">SAMPAI</p>
                                 <h2 class="display-4 font-weight-bold text-white m-0">22:00</h2>
-                                <p class="m-0 text-white-50 font-weight-bold">WIB[span_6](start_span)[span_6](end_span)</p>
+                                <p class="m-0 text-white-50 font-weight-bold">WIB[cite: 3]</p>
                             </div>
-                            <p class="mt-4 mb-0 text-muted small font-weight-bold">*Silakan pesan langsung melalui kontak admin WhatsApp sebelum jam tutup toko.</p>
+                            <p class="mt-4 mb-0 text-muted small font-weight-bold">*Pemesanan khusus disarankan langsung via WhatsApp sebelum jam operasional berakhir[cite: 3].</p>
                         </div>
                     </div>
                 </div>
@@ -272,59 +287,63 @@
             <div class="container my-5">
                 <div class="section-title-box text-center mb-4">
                     <h2 class="title-bold">CONTACT & LOCATION</h2>
-                    <p class="text-muted font-weight-bold">HUBUNGI KAMI ATUR PENGIRIMAN ATAU AMBIL DI TEMPAT</p>
+                    <p class="text-muted font-weight-bold">HUBUNGI ADMIN ATAU KUNJUNGI OUTLET KAMI LANGSUNG</p>
                 </div>
                 <div class="row">
-                    <!-- Form Kirim Pesan dengan Validasi JavaScript Canggih -->
+                    <!-- Form Kirim Pesan -->
                     <div class="col-md-6 mb-4">
                         <div class="card border-box-premium p-4 shadow-solid-sm h-100">
                             <h4 class="font-weight-bold text-black border-bottom pb-2 mb-3"><i class="far fa-paper-plane mr-2"></i>FORMULIR DIGITAL</h4>
-                            <div id="contactAlert" class="alert alert-dark font-weight-bold text-center border-box-premium-thin d-none mb-3">
-                                <i class="fas fa-check-circle text-success mr-1"></i> Pesan divalidasi dan berhasil dikirim! Admin segera merespons.
+                            
+                            <!-- Alert Success (Loading State Feedback) -->
+                            <div id="contactAlert" class="alert alert-success font-weight-bold text-center border-box-premium-thin d-none mb-3">
+                                <i class="fas fa-check-circle text-success mr-1"></i> Formulir tervalidasi! Data pemesanan Anda berhasil diteruskan ke sistem admin.
                             </div>
+                            
                             <form id="formKontak" novalidate>
                                 <div class="form-group">
                                     <label class="font-weight-bold text-black text-uppercase" for="nama">Nama Lengkap :</label>
                                     <input type="text" class="form-control premium-input" id="nama" required placeholder="Masukkan nama lengkap Anda...">
-                                    <div class="invalid-feedback text-danger font-weight-bold">Nama wajib diisi secara benar!</div>
+                                    <div class="invalid-feedback text-danger font-weight-bold">Nama lengkap wajib diisi secara valid!</div>
                                 </div>
                                 <div class="form-group">
                                     <label class="font-weight-bold text-black text-uppercase" for="keperluan">Kategori Keperluan :</label>
-                                    <select class="form-control premium-input" id="keperluan">
-                                        <option>Pertanyaan Umum Seputar Produk</option>
-                                        <option>Pemesanan Acara / Katering Snack Box</option>
-                                        <option>Penawaran Kemitraan / Reseller Frozen</option>
+                                    <!-- Menjadikan Dropdown Select yang Rapih Sesuai Aturan Gambar -->
+                                    <select class="form-control premium-input custom-select-premium" id="keperluan">
+                                        <option value="Pertanyaan Umum">Pertanyaan Umum Seputar Produk</option>
+                                        <option value="Pemesanan Acara">Pemesanan Acara / Katering Snack Box[cite: 3]</option>
+                                        <option value="Kemitraan">Penawaran Kemitraan / Reseller Frozen[cite: 3]</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label class="font-weight-bold text-black text-uppercase" for="pesan">Isi Pesan Anda :</label>
-                                    <textarea class="form-control premium-input" id="pesan" rows="4" required placeholder="Tulis isi detail pesan atau daftar orderan Anda..."></textarea>
-                                    <div class="invalid-feedback text-danger font-weight-bold">Kolom pesan tidak boleh dikosongkan!</div>
+                                    <label class="font-weight-bold text-black text-uppercase" for="pesan">Detail Pesan / Daftar Order :</label>
+                                    <textarea class="form-control premium-input" id="pesan" rows="4" required placeholder="Tulis rincian pesanan Anda atau poin pertanyaan di sini..."></textarea>
+                                    <div class="invalid-feedback text-danger font-weight-bold">Kolom isi detail pesan tidak boleh kosong!</div>
                                 </div>
                                 <button type="submit" class="btn btn-premium-action btn-block font-weight-bold py-3 mt-4" id="btnSubmit">
-                                    <span id="btnText">KIRIM FORM SEKARANG <i class="fas fa-paper-plane ml-1"></i></span>
+                                    <span id="btnText">KIRIM FORMULIR <i class="fas fa-paper-plane ml-1"></i></span>
                                 </button>
                             </form>
                         </div>
                     </div>
-                    <!-- Info Kontak & Embed Maps Kokoh -->
+                    <!-- Info Kontak & Maps -->
                     <div class="col-md-6 mb-4">
                         <div class="card border-box-premium p-4 bg-light shadow-solid-sm h-100 d-flex flex-column justify-content-between">
                             <div>
                                 <h4 class="font-weight-bold text-black border-bottom pb-2 mb-3"><i class="fas fa-id-card mr-2"></i>OFFICIAL INQUIRY</h4>
                                 <ul class="list-unstyled font-weight-bold text-dark text-uppercase small">
-                                    <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2 fa-lg"></i> Alamat : Jl. Kartama, Gg. Merpati Perumahan Villa Katama Blok B9, Pekanbaru, Riau[span_7](start_span)[span_7](end_span)</li>
-                                    <li class="mb-3"><i class="fab fa-instagram text-danger mr-2 fa-lg"></i> Instagram : @dailyruby12[span_8](start_span)[span_8](end_span)</li>
-                                    <li class="mb-3"><i class="fas fa-envelope text-muted mr-2 fa-lg"></i> Email Resmi : qaniaafq@gmail.com[span_9](start_span)[span_9](end_span)</li>
+                                    <li class="mb-3 d-flex align-items-start"><i class="fas fa-map-marker-alt text-danger mr-3 mt-1 fa-lg"></i> <span>Alamat: Jl. Kartama, Gg. Merpati Perumahan Villa Katama Blok B9, Pekanbaru, Riau[cite: 3]</span></li>
+                                    <li class="mb-3"><i class="fab fa-instagram text-danger mr-3 fa-lg"></i> Instagram: @dailyruby12[cite: 3]</li>
+                                    <li class="mb-3"><i class="fas fa-envelope text-muted mr-3 fa-lg"></i> Email Resmi: qaniaafq@gmail.com[cite: 3]</li>
                                 </ul>
                                 
                                 <a href="https://wa.me/6282177845467" class="btn btn-success btn-block font-weight-bold btn-whatsapp border-box-premium-thin text-white py-3 my-4" target="_blank">
-                                    <i class="fab fa-whatsapp mr-2 fa-lg"></i>ORDER VIA WHATSAPP CHAT
+                                    <i class="fab fa-whatsapp mr-2 fa-lg"></i>HUBUNGI VIA WHATSAPP CHAT[cite: 3]
                                 </a>
                             </div>
                             
-                            <!-- Google Maps Frame Tegas Berstruktur -->
-                            <div class="embed-responsive embed-responsive-16by9 border-box-premium-thin">
+                            <!-- Google Maps Frame -->
+                            <div class="embed-responsive embed-responsive-16by9 border-box-premium-thin shadow-sm">
                                 <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.692823616687!2d101.4334336!3d0.4542289!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwMjcnMTUuMiJOIDEwMcKwMjYnMDAuNCJFA!5e0!3m2!1sid!2sid!4v1690000000000!5m2!1sid!2sid" allowfullscreen="" loading="lazy"></iframe>
                             </div>
                         </div>
@@ -341,15 +360,15 @@
             <div class="modal-content border-box-premium">
                 <div class="modal-header bg-black text-white rounded-0">
                     <h5 class="modal-title font-weight-bold text-uppercase" id="modalNamaProduk">Nama Produk</h5>
-                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                    <button type="button" class="close text-white border-0 bg-transparent" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" style="font-size: 24px;">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body p-4 bg-white">
                     <p id="modalDescProduk" class="text-dark font-weight-semibold text-justify line-height-lg">Isi deskripsi...</p>
                 </div>
                 <div class="modal-footer bg-light rounded-0">
-                    <button type="button" class="btn btn-dark font-weight-bold px-4" data-dismiss="modal">CLOSE VIEW</button>
+                    <button type="button" class="btn btn-dark font-weight-bold px-4 rounded-0" data-dismiss="modal">CLOSE VIEW</button>
                 </div>
             </div>
         </div>
@@ -358,8 +377,8 @@
     <!-- ================= BRAND FOOTER ACADEMIC ================= -->
     <footer class="bg-black text-white text-center py-4 border-top-box">
         <div class="container">
-            <p class="m-0 font-weight-bold text-warning tracking-widest text-uppercase small">WAN MUHAMMAD ARIEL RAVASYACH &bull; NIM: 25110241[span_10](start_span)[span_10](end_span)</p>
-            <p class="m-0 text-white-50 text-uppercase tracking-wider small mt-1">UAS Pemrograman Web Desain 2 &bull; AMIK MAHAPUTRA RIAU[span_11](start_span)[span_11](end_span)</p>
+            <p class="m-0 font-weight-bold text-warning tracking-widest text-uppercase small">WAN MUHAMMAD ARIEL RAVASYACH &bull; NIM: 25110241[cite: 3]</p>
+            <p class="m-0 text-white-50 text-uppercase tracking-wider small mt-1">UAS Pemrograman Web Desain 2 &bull; AMIK MAHAPUTRA RIAU[cite: 3]</p>
         </div>
     </footer>
 
