@@ -1,45 +1,50 @@
-/* --- AMENDMENTS FOR COMMERCIAL LOOK --- */
-.navbar-premium {
-    border-bottom: 2px solid #efefef; /* Mengubah garis hitam kaku menjadi border soft premium shadow */
-    padding: 12px 0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.navbar-brand-premium {
-    font-size: 22px;
-    letter-spacing: 2px;
-}
-
+/* --- PERBAIKAN WARNA TEKS NAVBAR & TRANSISI --- */
 .nav-link-premium {
-    border-radius: 4px;
-    font-weight: 600 !important;
+    color: #333333 !important;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    font-weight: 700 !important;
+    padding: 8px 16px !important;
+    transition: all 0.3s ease;
 }
 
-.nav-link-premium:hover, .nav-link-premium.active {
+.nav-link-premium:hover, 
+.nav-link-premium.active {
     background-color: #000000 !important;
-    color: #ffffff !important;
+    color: #ffffff !important; /* Memastikan teks terlihat kontras jelas */
 }
 
-.custom-select-premium {
-    height: calc(2.25rem + 10px) !important;
-    font-weight: 500;
+/* --- PEMBATASAN UKURAN CAROUSEL (MENCEGAH KEGEDEAN) --- */
+.custom-carousel-size {
+    max-width: 850px; /* Batas lebar slideshow */
 }
 
-.highlight-popover:hover {
-    color: #1e7e34 !important;
-    text-decoration: underline;
+.carousel-img-wrap {
+    height: 380px; /* Mengunci tinggi slide agar proporsional */
+    background-color: #000;
 }
 
-/* Memperbaiki transisi pergantian halaman Single Page Application */
+.header-carousel-img {
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+}
+
+/* --- SISTEM TAMPILAN SPA --- */
 .page-section {
     display: none;
 }
+
 .page-section.active-page {
     display: block;
-    animation: slideFadeEffect 0.5s ease forwards;
+    animation: fadeInPage 0.4s ease-in-out forwards;
 }
 
-/* Modifikasi Bayangan Box-Shadow Streetwear */
-.shadow-section {
-    border: 1px solid #e1e1e1;
+@keyframes fadeInPage {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.shadow-solid-sm {
+    box-shadow: 3px 3px 0px #000000;
 }
