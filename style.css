@@ -120,7 +120,7 @@ body {
 
 /* ================= JUMBOTRON & HERO SECTION ================= */
 .jumbotron-premium {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.597), rgba(248, 250, 252, 0.608)), url('bgrisol.png');
+    background-image: linear-gradient(rgba(255, 255, 255, 0.597), rgba(248, 250, 252, 0.608)), url('img/bgrisol.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
