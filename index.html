@@ -4,22 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Risol Daily Ruby Pekanbaru - Premium Culinary</title>
+    <!-- Bootstrap 4.6.2 & FontAwesome -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="announcement-bar bg-black text-center text-white py-2 font-weight-bold">
+    <!-- Announcement Bar dengan Desain Lebih Premium & Soft -->
+    <div class="announcement-bar text-center text-white py-2 font-weight-bold">
         <i class="fas fa-bolt text-warning mr-2"></i> PROMO SPESIAL: BELI 10 GRATIS 1 VARIAN MAYO — KHUSUS BULAN INI!
     </div>
     
-    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top navbar-premium shadow-sm">
+    <!-- Navbar Premium Modern -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top navbar-premium">
         <div class="container">
             <a class="navbar-brand navbar-brand-premium d-flex align-items-center" href="#" data-target-page="home">
-                DAILY<span class="text-stroke ml-1">RUBY</span>
+                <i class="fas fa-cookie-bite mr-2 navbar-brand-icon"></i>
+                DAILY<span class="text-accent ml-1">RUBY</span>
             </a>
+        
             <button class="navbar-toggler custom-toggler border-0" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -28,9 +33,18 @@
                     <li class="nav-item"><a class="nav-link nav-link-premium active mx-1" href="#" data-target-page="home">BERANDA</a></li>
                     <li class="nav-item"><a class="nav-link nav-link-premium mx-1" href="#" data-target-page="menu">KATALOG MENU</a></li>
                     <li class="nav-item"><a class="nav-link nav-link-premium mx-1" href="#" data-target-page="about">TENTANG KAMI</a></li>
-                    <li class="nav-item"><a class="nav-link nav-link-premium mx-1" href="#" data-target-page="contact">KONTAK & LOKASI</a></li>
-                    <li class="nav-item ml-lg-3 mt-3 mt-lg-0">
-                        <span class="badge badge-premium-dark d-flex align-items-center justify-content-center py-2 px-3 bg-dark text-white font-weight-bold" style="font-size: 11px; letter-spacing: 1px;">
+                    <li class="nav-item"><a class="nav-link nav-link-premium mx-1" href="#" data-target-page="contact">KONTAK</a></li>
+                    
+                    <!-- Tombol Keranjang Belanja Modern -->
+                    <li class="nav-item mx-1 my-2 my-lg-0">
+                        <button class="btn btn-cart-icon position-relative" data-toggle="modal" data-target="#modalCart" id="btn-cart-trigger">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="badge badge-danger position-absolute" id="cart-counter">0</span>
+                        </button>
+                    </li>
+
+                    <li class="nav-item ml-lg-3 mt-2 mt-lg-0">
+                        <span class="badge badge-premium-time py-2 px-3 text-white font-weight-bold">
                             <i class="fas fa-clock mr-2 text-warning"></i> ORDER: 08.00 - 22.00 WIB
                         </span>
                     </li>
@@ -41,49 +55,61 @@
 
     <main class="main-wrapper">
 
+        <!-- SECTION HOME -->
         <section id="page-home" class="page-section active-page">
             <div class="jumbotron jumbotron-premium my-0">
                 <div class="container text-center py-5">
-                    <div class="d-inline-block badge-category mb-3 px-3 py-1 bg-black text-white font-weight-bold small" style="letter-spacing: 2px;">PREMIUM STREET FOOD</div>
-                    <h1 class="hero-main-title font-weight-900 tracking-tight text-black" style="font-size: 3.5rem; line-height: 1.1; font-weight: 900;">CRISPY OUTSIDE,<br>LUMER INSIDE.</h1>
-                    <p class="hero-sub-title text-uppercase font-weight-bold text-muted mx-auto mt-3 small" style="max-width: 600px; letter-spacing: 1px;">Garing Renyah di Luar, Meleleh Sempurna di Dalam. Risol Premium khas Pekanbaru dengan Bahan Pilihan Terbaik.</p>
-                    <div class="mt-4">
-                        <button class="btn btn-dark font-weight-bold px-4 py-2 mr-2 mb-2 rounded-0 shadow-solid-sm" id="btn-explore-menu" data-target-page="menu">
+                    <div class="d-inline-block badge-category mb-3 px-3 py-1 text-white font-weight-bold bg-accent-dark">PREMIUM STREET FOOD</div>
+                    <h1 class="hero-main-title text-dark">CRISPY OUTSIDE,<br><span class="text-accent-highlight">LUMER INSIDE.</span></h1>
+                    <p class="hero-sub-title mx-auto mt-3 text-dark">Garing Renyah di Luar, Meleleh Sempurna di Dalam. Risol Premium khas Pekanbaru dengan Bahan Pilihan Terbaik.</p>
+                    <div class="mt-4 pt-2">
+                        <button class="btn btn-premium-primary font-weight-bold px-4 py-3 mr-2 mb-2" id="btn-explore-menu" data-target-page="menu">
                             LIHAT MENU <i class="fas fa-shopping-bag ml-2"></i>
                         </button>
-                        <button class="btn btn-outline-dark font-weight-bold px-4 py-2 mb-2 rounded-0 shadow-solid-sm" id="btn-learn-about" data-target-page="about">
+                        <button class="btn btn-premium-outline font-weight-bold px-4 py-3 mb-2" id="btn-learn-about" data-target-page="about">
                             CERITA KAMI
                         </button>
                     </div>
                 </div>
             </div>
 
-            <div class="container my-5 p-4 rounded bg-white shadow-sm border">
-                <div class="section-title-box text-center mb-4">
-                    <h2 class="font-weight-bold text-uppercase" style="letter-spacing: 1px; font-size: 1.8rem;">Menu Terlaris Minggu Ini <span class="badge badge-danger text-uppercase ml-2 p-2 px-3 align-middle" style="font-size: 11px; border-radius: 0;">Hot Item</span></h2>
+            <!-- Carousel Section -->
+            <div class="container my-5 py-4">
+                <div class="section-title-box text-center mb-5">
+                    <h2 class="font-weight-bold section-main-title">Menu Terlaris Minggu Ini <span class="badge badge-danger badge-hot text-uppercase ml-2">Hot Item</span></h2>
                 </div>
-                <div id="premiumCarousel" class="carousel slide border shadow-sm mx-auto custom-carousel-size" data-ride="carousel">
+                <div id="premiumCarousel" class="carousel slide border-0 shadow-premium mx-auto custom-carousel-size" data-ride="carousel" data-interval="2000">
                     <ol class="carousel-indicators custom-indicators">
                         <li data-target="#premiumCarousel" data-slide-to="0" class="active"></li>
                         <li data-target="#premiumCarousel" data-slide-to="1"></li>
+                        <li data-target="#premiumCarousel" data-slide-to="2"></li>
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="carousel-img-wrap">
-                                <img src="https://images.unsplash.com/photo-1541532713592-79a0317b6b77?w=1200&auto=format&fit=crop&q=80" class="d-block w-100 object-fit-cover header-carousel-img" alt="Risol Mayo Premium">
+                                <img src="img/sh.jpg" class="d-block w-100 h-100 header-carousel-img" alt="Risol Ayam Suwir">
                             </div>
-                            <div class="carousel-caption d-none d-md-block px-4 py-3" style="background: rgba(0,0,0,0.7); left: 0; right: 0; bottom: 0;">
-                                <h5 class="font-weight-bold text-warning text-uppercase">01 / Risol Mayo Premium</h5>
-                                <p class="mb-0 text-white small">Isian smoked beef premium yang tebal, potongan telur rebus segar, dan limpahan saus mayones racikan rahasia.</p>
+                            <div class="carousel-caption custom-caption d-none d-md-block">
+                                <h5 class="font-weight-bold text-uppercase text-warning-custom">Risol Ayam Suwir</h5>
+                                <p class="mb-0 text-white font-weight-light">Suwiran ayam lembut dengan rempah pilihan, lauk favorit keluarga Indonesia</p>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="carousel-img-wrap">
-                                <img src="https://images.unsplash.com/photo-1608039829572-78524f79c4c7?w=1200&auto=format&fit=crop&q=80" class="d-block w-100 object-fit-cover header-carousel-img" alt="Risol Coklat Lava">
+                                <img src="img/sh3.jpg" class="d-block w-100 h-100 header-carousel-img" alt="Risol Coklat">
                             </div>
-                            <div class="carousel-caption d-none d-md-block px-4 py-3" style="background: rgba(0,0,0,0.7); left: 0; right: 0; bottom: 0;">
-                                <h5 class="font-weight-bold text-warning text-uppercase">02 / Risol Coklat Lava</h5>
-                                <p class="mb-0 text-white small">Sensasi premium cokelat manis pekat yang meleleh lumer seketika di dalam mulut.</p>
+                            <div class="carousel-caption custom-caption d-none d-md-block">
+                                <h5 class="font-weight-bold text-uppercase text-warning-custom">Risol Coklat</h5>
+                                <p class="mb-0 text-white font-weight-light">Sensasi premium cokelat manis pekat yang meleleh lumer seketika di dalam mulut.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-img-wrap">
+                                <img src="img/sh2.jpg" class="d-block w-100 h-100 header-carousel-img" alt="Risol Mayo">
+                            </div>
+                            <div class="carousel-caption custom-caption d-none d-md-block">
+                                <h5 class="font-weight-bold text-uppercase text-warning-custom">Risol Mayo</h5>
+                                <p class="mb-0 text-white font-weight-light">Mayo creamy melimpah, dipadukan smoky beef dan telur, rasanya nagih setiap gigitan.</p>
                             </div>
                         </div>
                     </div>
@@ -99,105 +125,143 @@
             </div>
         </section>
 
+        <!-- SECTION CATALOGUE -->
         <section id="page-menu" class="page-section">
             <div class="container my-5">
-                <div class="section-title-box text-center mb-4">
-                    <h2 class="font-weight-bold" style="letter-spacing: 1px;">PRODUCT CATALOGUE</h2>
-                    <p class="text-muted font-weight-bold small" style="letter-spacing: 2px;">EKSPLORASI 6 VARIAN RASA TERBAIK KAMI</p>
+                <div class="section-title-box text-center mb-5">
+                    <h2 class="font-weight-bold section-main-title">PRODUCT CATALOGUE</h2>
+                    <p class="text-accent font-weight-bold small tracking-widest">EKSPLORASI VARIAN RASA TERBAIK KAMI</p>
                 </div>
                 
-                <ul class="nav nav-pills justify-content-center mb-5 tab-premium-wrap p-2 bg-light border rounded" id="menuTabs" role="tablist">
+                <ul class="nav nav-pills justify-content-center mb-5 tab-premium-wrap p-2" id="menuTabs" role="tablist">
                     <li class="nav-item m-1">
-                        <a class="nav-link active font-weight-bold text-uppercase px-4" id="gurih-tab" data-toggle="tab" href="#gurih" role="tab" style="letter-spacing: 1px; font-size: 12px;"><i class="fas fa-hamburger mr-2"></i>Varian Gurih</a>
+                        <a class="nav-link active font-weight-bold text-uppercase px-4" id="gurih-tab" data-toggle="tab" href="#gurih" role="tab"><i class="fas fa-hamburger mr-2"></i>Siap Saji</a>
                     </li>
                     <li class="nav-item m-1">
-                        <a class="nav-link font-weight-bold text-uppercase px-4" id="manis-tab" data-toggle="tab" href="#manis" role="tab" style="letter-spacing: 1px; font-size: 12px;"><i class="fas fa-cookie mr-2"></i>Varian Manis</a>
+                        <a class="nav-link font-weight-bold text-uppercase px-4" id="manis-tab" data-toggle="tab" href="#manis" role="tab"><i class="fas fa-snowflake mr-2"></i>Edisi Frozen</a>
                     </li>
                 </ul>
 
                 <div class="tab-content" id="menuTabsContent">
+                    <!-- TAB SIAP SAJI -->
                     <div class="tab-pane fade show active" id="gurih" role="tabpanel">
                         <div class="row">
+                            <!-- Ayam Suwir -->
                             <div class="col-md-6 col-lg-4 mb-4">
-                                <div class="card card-premium h-100 shadow-sm border rounded-0">
-                                    <div class="card-badge-top bg-black text-white px-3 py-1 font-weight-bold position-absolute" style="top: -12px; left: 15px; font-size: 10px; letter-spacing: 1px;">FAVORIT</div>
-                                    <div class="card-body d-flex flex-column justify-content-between p-4 pt-5">
+                                <div class="card card-premium h-100 border-0 shadow-premium">
+                                    <div class="card-badge-top bg-accent text-white px-3 py-1 font-weight-bold position-absolute">FAVORIT</div>
+                                    <div class="catalog-img-wrap">
+                                        <img src="img/ayam.jpeg" class="card-img-top catalog-img" alt="Risol Ayam Suwir">
+                                    </div>
+                                    <div class="card-body d-flex flex-column justify-content-between p-4">
                                         <div>
-                                            <h4 class="font-weight-bold text-black text-uppercase mb-2" style="font-size: 17px;">Risol Ayam Suwir</h4>
-                                            <p class="text-secondary small">Daging dada ayam segar pilihan yang disuwir tebal, dimasak dengan bumbu rempah tradisional melimpah.</p>
+                                            <h4 class="font-weight-bold text-dark text-uppercase mb-2 card-item-title">Risol Ayam Suwir</h4>
+                                            <p class="text-secondary small card-item-desc">Daging dada ayam segar pilihan yang disuwir tebal, dimasak dengan bumbu rempah tradisional melimpah.</p>
                                         </div>
-                                        <div>
-                                            <div class="price-tag mb-3 font-weight-bold text-danger" style="font-size: 18px;">Rp 5.000 <span class="text-muted font-weight-normal small">/ pcs</span></div>
-                                            <button class="btn btn-outline-dark btn-block font-weight-bold btn-detail-trigger rounded-0" 
-                                                    data-toggle="modal" data-target="#modalDetailRisol" 
-                                                    data-name="Risol Ayam Suwir" 
-                                                    data-desc="Diproduksi higienis dengan suwiran daging ayam asli yang padat dan bumbu rempah gurih meresap sempurna di dalam balutan kulit risol renyah berbalut tepung panir pilihan."
-                                                    data-toggle-tooltip="tooltip" data-placement="top" title="Klik untuk komposisi detail">
-                                                QUICK VIEW <i class="fas fa-eye ml-1"></i>
-                                            </button>
+                                        <div class="mt-3">
+                                            <div class="price-tag mb-3 font-weight-bold text-danger">Rp 3.500 <span class="text-muted font-weight-normal small">/ pcs</span></div>
+                                            <button class="btn btn-outline-premium-card btn-block font-weight-bold btn-detail-trigger mb-2" data-toggle="modal" data-target="#modalDetailRisol" data-name="Risol Ayam Suwir" data-desc="Diproduksi higienis dengan suwiran daging ayam asli yang padat dan bumbu rempah gurih meresap sempurna.">QUICK VIEW <i class="fas fa-eye ml-1"></i></button>
+                                            <button class="btn btn-premium-primary btn-block font-weight-bold btn-add-to-cart" data-name="Risol Ayam Suwir" data-price="3500">PESAN</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <!-- Cokelat -->
                             <div class="col-md-6 col-lg-4 mb-4">
-                                <div class="card card-premium h-100 shadow-sm border rounded-0">
-                                    <div class="card-badge-top bg-black text-white px-3 py-1 font-weight-bold position-absolute" style="top: -12px; left: 15px; font-size: 10px; letter-spacing: 1px;">BEST SELLER</div>
-                                    <div class="card-body d-flex flex-column justify-content-between p-4 pt-5">
+                                <div class="card card-premium h-100 border-0 shadow-premium">
+                                    <div class="card-badge-top bg-accent text-white px-3 py-1 font-weight-bold position-absolute">BEST SELLER</div>
+                                    <div class="catalog-img-wrap">
+                                        <img src="img/coklat.jpeg" class="card-img-top catalog-img" alt="Risol Cokelat">
+                                    </div>
+                                    <div class="card-body d-flex flex-column justify-content-between p-4">
                                         <div>
-                                            <h4 class="font-weight-bold text-black text-uppercase mb-2" style="font-size: 17px;">Risol Mayo</h4>
-                                            <p class="text-secondary small">Kombinasi premium smoked beef, potongan telur rebus segar, dan siraman saus mayones super creamy bercita rasa asam-manis pas.</p>
+                                            <h4 class="font-weight-bold text-dark text-uppercase mb-2 card-item-title">Risol Cokelat</h4>
+                                            <p class="text-secondary small card-item-desc">Sensasi premium cokelat manis pekat yang meleleh lumer seketika di dalam balutan kulit renyah.</p>
                                         </div>
-                                        <div>
-                                            <div class="price-tag mb-3 font-weight-bold text-danger" style="font-size: 18px;">Rp 5.000 <span class="text-muted font-weight-normal small">/ pcs</span></div>
-                                            <button class="btn btn-outline-dark btn-block font-weight-bold btn-detail-trigger rounded-0" 
-                                                    data-toggle="modal" data-target="#modalDetailRisol" 
-                                                    data-name="Risol Mayo" 
-                                                    data-desc="Sensasi lumer saus mayones premium racikan Daily Ruby yang meleleh di mulut, berpadu sempurna dengan gurihnya daging asap dan potongan telur segar."
-                                                    data-toggle-tooltip="tooltip" data-placement="top" title="Klik untuk komposisi detail">
-                                                QUICK VIEW <i class="fas fa-eye ml-1"></i>
-                                            </button>
+                                        <div class="mt-3">
+                                            <div class="price-tag mb-3 font-weight-bold text-danger">Rp 3.500 <span class="text-muted font-weight-normal small">/ pcs</span></div>
+                                            <button class="btn btn-outline-premium-card btn-block font-weight-bold btn-detail-trigger mb-2" data-toggle="modal" data-target="#modalDetailRisol" data-name="Risol Cokelat" data-desc="Isian cokelat murni berkualitas tinggi yang lumer seketika saat digigit selagi hangat.">QUICK VIEW <i class="fas fa-eye ml-1"></i></button>
+                                            <button class="btn btn-premium-primary btn-block font-weight-bold btn-add-to-cart" data-name="Risol Cokelat" data-price="3500">PESAN</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <!-- Mayo -->
                             <div class="col-md-6 col-lg-4 mb-4">
-                                <div class="card card-premium h-100 shadow-sm border rounded-0">
-                                    <div class="card-badge-top bg-black text-white px-3 py-1 font-weight-bold position-absolute" style="top: -12px; left: 15px; font-size: 10px; letter-spacing: 1px;">KLASIK</div>
-                                    <div class="card-body d-flex flex-column justify-content-between p-4 pt-5">
+                                <div class="card card-premium h-100 border-0 shadow-premium">
+                                    <div class="card-badge-top bg-accent text-white px-3 py-1 font-weight-bold position-absolute">POPULER</div>
+                                    <div class="catalog-img-wrap">
+                                        <img src="img/mayo.jpeg" class="card-img-top catalog-img" alt="Risol Mayo">
+                                    </div>
+                                    <div class="card-body d-flex flex-column justify-content-between p-4">
                                         <div>
-                                            <h4 class="font-weight-bold text-black text-uppercase mb-2" style="font-size: 17px;">Risol Rougut</h4>
-                                            <p class="text-secondary small">Isian adonan ragout krim susu kental yang dimasak bersama potongan wortel manis dan kentang lembut nan gurih.</p>
+                                            <h4 class="font-weight-bold text-dark text-uppercase mb-2 card-item-title">Risol Mayo</h4>
+                                            <p class="text-secondary small card-item-desc">Kombinasi premium smoked beef, potongan telur rebus, dan siraman saus mayones super creamy.</p>
                                         </div>
-                                        <div>
-                                            <div class="price-tag mb-3 font-weight-bold text-danger" style="font-size: 18px;">Rp 4.500 <span class="text-muted font-weight-normal small">/ pcs</span></div>
-                                            <button class="btn btn-outline-dark btn-block font-weight-bold btn-detail-trigger rounded-0" 
-                                                    data-toggle="modal" data-target="#modalDetailRisol" 
-                                                    data-name="Risol Rougut" 
-                                                    data-desc="Isian sayur wortel dan kentang bertekstur lembut creamy berkat kombinasi susu murni dan keju pilihan, dibalut kulit risoles tipis yang krispi."
-                                                    data-toggle-tooltip="tooltip" data-placement="top" title="Klik untuk komposisi detail">
-                                                QUICK VIEW <i class="fas fa-eye ml-1"></i>
-                                            </button>
+                                        <div class="mt-3">
+                                            <div class="price-tag mb-3 font-weight-bold text-danger">Rp 3.500 <span class="text-muted font-weight-normal small">/ pcs</span></div>
+                                            <button class="btn btn-outline-premium-card btn-block font-weight-bold btn-detail-trigger mb-2" data-toggle="modal" data-target="#modalDetailRisol" data-name="Risol Mayo" data-desc="Sensasi lumer saus mayones premium racikan Daily Ruby berpadu dengan gurihnya daging asap.">QUICK VIEW <i class="fas fa-eye ml-1"></i></button>
+                                            <button class="btn btn-premium-primary btn-block font-weight-bold btn-add-to-cart" data-name="Risol Mayo" data-price="3500">PESAN</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <!-- Matcha -->
                             <div class="col-md-6 col-lg-4 mb-4">
-                                <div class="card card-premium h-100 shadow-sm border rounded-0">
-                                    <div class="card-badge-top bg-black text-white px-3 py-1 font-weight-bold position-absolute" style="top: -12px; left: 15px; font-size: 10px; letter-spacing: 1px;">ITALIAN STYLE</div>
-                                    <div class="card-body d-flex flex-column justify-content-between p-4 pt-5">
+                                <div class="card card-premium h-100 border-0 shadow-premium">
+                                    <div class="card-badge-top bg-accent text-white px-3 py-1 font-weight-bold position-absolute">UNIK</div>
+                                    <div class="catalog-img-wrap">
+                                        <img src="img/matcha.jpeg" class="card-img-top catalog-img" alt="Risol Matcha">
+                                    </div>
+                                    <div class="card-body d-flex flex-column justify-content-between p-4">
                                         <div>
-                                            <h4 class="font-weight-bold text-black text-uppercase mb-2" style="font-size: 17px;">Risol Bolognese</h4>
-                                            <p class="text-secondary small">Saus tomat daging bolognese khas Italia berpadu dengan keju mozzarella lumer yang mulur sempurna.</p>
+                                            <h4 class="font-weight-bold text-dark text-uppercase mb-2 card-item-title">Risol Matcha</h4>
+                                            <p class="text-secondary small card-item-desc">Isian pasta teh hijau Jepang asli dengan rasa manis yang elegan dan lumer lembut di lidah.</p>
                                         </div>
+                                        <div class="mt-3">
+                                            <div class="price-tag mb-3 font-weight-bold text-danger">Rp 3.500 <span class="text-muted font-weight-normal small">/ pcs</span></div>
+                                            <button class="btn btn-outline-premium-card btn-block font-weight-bold btn-detail-trigger mb-2" data-toggle="modal" data-target="#modalDetailRisol" data-name="Risol Matcha" data-desc="Dibuat khusus untuk pencinta rasa autentik Matcha Jepang premium di setiap gigitan hangat.">QUICK VIEW <i class="fas fa-eye ml-1"></i></button>
+                                            <button class="btn btn-premium-primary btn-block font-weight-bold btn-add-to-cart" data-name="Risol Matcha" data-price="3500">PESAN</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Ragout -->
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="card card-premium h-100 border-0 shadow-premium">
+                                    <div class="card-badge-top bg-accent text-white px-3 py-1 font-weight-bold position-absolute">KLASIK</div>
+                                    <div class="catalog-img-wrap">
+                                        <img src="img/rogut.jpeg" class="card-img-top catalog-img" alt="Risol Ragout">
+                                    </div>
+                                    <div class="card-body d-flex flex-column justify-content-between p-4">
                                         <div>
-                                            <div class="price-tag mb-3 font-weight-bold text-danger" style="font-size: 18px;">Rp 5.500 <span class="text-muted font-weight-normal small">/ pcs</span></div>
-                                            <button class="btn btn-outline-dark btn-block font-weight-bold btn-detail-trigger rounded-0" 
-                                                    data-toggle="modal" data-target="#modalDetailRisol" 
-                                                    data-name="Risol Bolognese" 
-                                                    data-desc="Cita rasa western mewah dari saus daging cincang bolognese berpadu dengan gurihnya keju leleh di dalam balutan kulit luar khas nusantara."
-                                                    data-toggle-tooltip="tooltip" data-placement="top" title="Klik untuk komposisi detail">
-                                                QUICK VIEW <i class="fas fa-eye ml-1"></i>
-                                            </button>
+                                            <h4 class="font-weight-bold text-dark text-uppercase mb-2 card-item-title">Risol Ragout</h4>
+                                            <p class="text-secondary small card-item-desc">Isian adonan ragout krim susu kental yang dimasak bersama potongan wortel manis dan kentang lembut.</p>
+                                        </div>
+                                        <div class="mt-3">
+                                            <div class="price-tag mb-3 font-weight-bold text-danger">Rp 3.500 <span class="text-muted font-weight-normal small">/ pcs</span></div>
+                                            <button class="btn btn-outline-premium-card btn-block font-weight-bold btn-detail-trigger mb-2" data-toggle="modal" data-target="#modalDetailRisol" data-name="Risol Ragout" data-desc="Isian sayur wortel dan kentang bertekstur lembut creamy berkat kombinasi susu murni dan keju pilihan.">QUICK VIEW <i class="fas fa-eye ml-1"></i></button>
+                                            <button class="btn btn-premium-primary btn-block font-weight-bold btn-add-to-cart" data-name="Risol Ragout" data-price="3500">PESAN</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Bolognese -->
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="card card-premium h-100 border-0 shadow-premium">
+                                    <div class="card-badge-top bg-accent text-white px-3 py-1 font-weight-bold position-absolute">ITALIAN</div>
+                                    <div class="catalog-img-wrap">
+                                        <img src="img/bolo.jpg" class="card-img-top catalog-img" alt="Risol Bolognese">
+                                    </div>
+                                    <div class="card-body d-flex flex-column justify-content-between p-4">
+                                        <div>
+                                            <h4 class="font-weight-bold text-dark text-uppercase mb-2 card-item-title">Risol Bolognese</h4>
+                                            <p class="text-secondary small card-item-desc">Saus tomat daging bolognese khas Italia berpadu dengan keju mozzarella lumer yang mulur sempurna.</p>
+                                        </div>
+                                        <div class="mt-3">
+                                            <div class="price-tag mb-3 font-weight-bold text-danger">Rp 3.500 <span class="text-muted font-weight-normal small">/ pcs</span></div>
+                                            <button class="btn btn-outline-premium-card btn-block font-weight-bold btn-detail-trigger mb-2" data-toggle="modal" data-target="#modalDetailRisol" data-name="Risol Bolognese" data-desc="Cita rasa western mewah dari saus daging cincang bolognese berpadu dengan keju leleh mozzarella.">QUICK VIEW <i class="fas fa-eye ml-1"></i></button>
+                                            <button class="btn btn-premium-primary btn-block font-weight-bold btn-add-to-cart" data-name="Risol Bolognese" data-price="3500">PESAN</button>
                                         </div>
                                     </div>
                                 </div>
@@ -205,46 +269,125 @@
                         </div>
                     </div>
 
+                    <!-- TAB EDISI FROZEN -->
                     <div class="tab-pane fade" id="manis" role="tabpanel">
                         <div class="row">
+                            <!-- Frozen Ayam Suwir -->
                             <div class="col-md-6 col-lg-4 mb-4">
-                                <div class="card card-premium h-100 shadow-sm border rounded-0">
-                                    <div class="card-badge-top bg-success text-white px-3 py-1 font-weight-bold position-absolute" style="top: -12px; left: 15px; font-size: 10px; letter-spacing: 1px;">NEW RELEASES</div>
-                                    <div class="card-body d-flex flex-column justify-content-between p-4 pt-5">
+                                <div class="card card-premium h-100 border-0 shadow-premium">
+                                    <div class="card-badge-top bg-success text-white px-3 py-1 font-weight-bold position-absolute">FROZEN PACK</div>
+                                    <div class="catalog-img-wrap">
+                                        <img src="img/frozenr.jpg" class="card-img-top catalog-img" alt="Frozen Risol Ayam Suwir">
+                                    </div>
+                                    <div class="card-body d-flex flex-column justify-content-between p-4">
                                         <div>
-                                            <h4 class="font-weight-bold text-black text-uppercase mb-2" style="font-size: 17px;">Risol Matcha</h4>
-                                            <p class="text-secondary small">Isian pasta teh hijau Jepang asli dengan rasa manis yang elegan dan lumer lembut di lidah.</p>
+                                            <h4 class="font-weight-bold text-dark text-uppercase mb-2 card-item-title">Frozen Ayam Suwir</h4>
+                                            <p class="text-secondary small card-item-desc">Varian ayam suwir gurih melimpah, dikemas rapi khusus siap goreng kapan saja di rumah.</p>
                                         </div>
-                                        <div>
-                                            <div class="price-tag mb-3 font-weight-bold text-danger" style="font-size: 18px;">Rp 5.000 <span class="text-muted font-weight-normal small">/ pcs</span></div>
-                                            <button class="btn btn-outline-dark btn-block font-weight-bold btn-detail-trigger rounded-0" 
-                                                    data-toggle="modal" data-target="#modalDetailRisol" 
-                                                    data-name="Risol Matcha" 
-                                                    data-desc="Dibuat khusus untuk pencinta rasa autentik Matcha, memberikan sensasi lumeran manis-pahit khas daun teh Jepang premium di setiap gigitan hangat."
-                                                    data-toggle-tooltip="tooltip" data-placement="top" title="Klik untuk komposisi detail">
-                                                QUICK VIEW <i class="fas fa-eye ml-1"></i>
-                                            </button>
+                                        <div class="mt-3">
+                                            <div class="price-tag mb-3 font-weight-bold text-danger">Rp 15.000 <span class="text-muted font-weight-normal small">/ pack (isi 5)</span></div>
+                                            <button class="btn btn-outline-premium-card btn-block font-weight-bold btn-detail-trigger mb-2" data-toggle="modal" data-target="#modalDetailRisol" data-name="Frozen Risol Ayam Suwir" data-desc="Kemasan kedap udara (vacuum pack) isi 5 pcs. Praktis, higienis, dan awet disimpan di freezer hingga 2 minggu.">QUICK VIEW <i class="fas fa-eye ml-1"></i></button>
+                                            <button class="btn btn-premium-primary btn-block font-weight-bold btn-add-to-cart" data-name="Frozen Risol Ayam Suwir" data-price="15000">PESAN</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <!-- Frozen Cokelat -->
                             <div class="col-md-6 col-lg-4 mb-4">
-                                <div class="card card-premium h-100 shadow-sm border rounded-0">
-                                    <div class="card-badge-top bg-success text-white px-3 py-1 font-weight-bold position-absolute" style="top: -12px; left: 15px; font-size: 10px; letter-spacing: 1px;">SWEET LAVA</div>
-                                    <div class="card-body d-flex flex-column justify-content-between p-4 pt-5">
+                                <div class="card card-premium h-100 border-0 shadow-premium">
+                                    <div class="card-badge-top bg-success text-white px-3 py-1 font-weight-bold position-absolute">FROZEN PACK</div>
+                                    <div class="catalog-img-wrap">
+                                        <img src="img/frozenr.jpg" class="card-img-top catalog-img" alt="Frozen Risol Cokelat">
+                                    </div>
+                                    <div class="card-body d-flex flex-column justify-content-between p-4">
                                         <div>
-                                            <h4 class="font-weight-bold text-black text-uppercase mb-2" style="font-size: 17px;">Risol Coklat</h4>
-                                            <p class="text-secondary small">Isian pasta cokelat Belgia premium kental melimpah yang diproses khusus hingga meleleh meleleh sempurna.</p>
+                                            <h4 class="font-weight-bold text-dark text-uppercase mb-2 card-item-title">Frozen Risol Cokelat</h4>
+                                            <p class="text-secondary small card-item-desc">Isian pasta cokelat Belgia premium kental melimpah. Lumer maksimal saat digoreng hangat.</p>
                                         </div>
+                                        <div class="mt-3">
+                                            <div class="price-tag mb-3 font-weight-bold text-danger">Rp 15.000 <span class="text-muted font-weight-normal small">/ pack (isi 5)</span></div>
+                                            <button class="btn btn-outline-premium-card btn-block font-weight-bold btn-detail-trigger mb-2" data-toggle="modal" data-target="#modalDetailRisol" data-name="Frozen Risol Cokelat" data-desc="Kemasan kedap udara (vacuum pack) isi 5 pcs. Cokelat meleleh sempurna begitu matang disajikan.">QUICK VIEW <i class="fas fa-eye ml-1"></i></button>
+                                            <button class="btn btn-premium-primary btn-block font-weight-bold btn-add-to-cart" data-name="Frozen Risol Cokelat" data-price="15000">PESAN</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Frozen Mayo -->
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="card card-premium h-100 border-0 shadow-premium">
+                                    <div class="card-badge-top bg-success text-white px-3 py-1 font-weight-bold position-absolute">FROZEN PACK</div>
+                                    <div class="catalog-img-wrap">
+                                        <img src="img/frozenr.jpg" class="card-img-top catalog-img" alt="Frozen Risol Mayo">
+                                    </div>
+                                    <div class="card-body d-flex flex-column justify-content-between p-4">
                                         <div>
-                                            <div class="price-tag mb-3 font-weight-bold text-danger" style="font-size: 18px;">Rp 5.000 <span class="text-muted font-weight-normal small">/ pcs</span></div>
-                                            <button class="btn btn-outline-dark btn-block font-weight-bold btn-detail-trigger rounded-0" 
-                                                    data-toggle="modal" data-target="#modalDetailRisol" 
-                                                    data-name="Risol Coklat" 
-                                                    data-desc="Isian cokelat murni berkualitas tinggi yang lumer seketika saat digigit selagi hangat. Sangat pas dinikmati sebagai teman minum kopi atau teh."
-                                                    data-toggle-tooltip="tooltip" data-placement="top" title="Klik untuk komposisi detail">
-                                                QUICK VIEW <i class="fas fa-eye ml-1"></i>
-                                            </button>
+                                            <h4 class="font-weight-bold text-dark text-uppercase mb-2 card-item-title">Frozen Risol Mayo</h4>
+                                            <p class="text-secondary small card-item-desc">Isian premium smoked beef, saus mayo rahasia creamy dan potongan telur rebus segar.</p>
+                                        </div>
+                                        <div class="mt-3">
+                                            <div class="price-tag mb-3 font-weight-bold text-danger">Rp 15.000 <span class="text-muted font-weight-normal small">/ pack (isi 5)</span></div>
+                                            <button class="btn btn-outline-premium-card btn-block font-weight-bold btn-detail-trigger mb-2" data-toggle="modal" data-target="#modalDetailRisol" data-name="Frozen Risol Mayo" data-desc="Kemasan kedap udara (vacuum pack) isi 5 pcs. Sensasi mayones lumer idola setiap momen kumpul.">QUICK VIEW <i class="fas fa-eye ml-1"></i></button>
+                                            <button class="btn btn-premium-primary btn-block font-weight-bold btn-add-to-cart" data-name="Frozen Risol Mayo" data-price="15000">PESAN</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Frozen Matcha -->
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="card card-premium h-100 border-0 shadow-premium">
+                                    <div class="card-badge-top bg-success text-white px-3 py-1 font-weight-bold position-absolute">FROZEN PACK</div>
+                                    <div class="catalog-img-wrap">
+                                        <img src="img/frozenr.jpg" class="card-img-top catalog-img" alt="Frozen Risol Matcha">
+                                    </div>
+                                    <div class="card-body d-flex flex-column justify-content-between p-4">
+                                        <div>
+                                            <h4 class="font-weight-bold text-dark text-uppercase mb-2 card-item-title">Frozen Risol Matcha</h4>
+                                            <p class="text-secondary small card-item-desc">Kombinasi lumeran manis-pahit khas daun teh Jepang premium berbalut kulit renyah.</p>
+                                        </div>
+                                        <div class="mt-3">
+                                            <div class="price-tag mb-3 font-weight-bold text-danger">Rp 15.000 <span class="text-muted font-weight-normal small">/ pack (isi 5)</span></div>
+                                            <button class="btn btn-outline-premium-card btn-block font-weight-bold btn-detail-trigger mb-2" data-toggle="modal" data-target="#modalDetailRisol" data-name="Frozen Risol Matcha" data-desc="Kemasan kedap udara (vacuum pack) isi 5 pcs. Autentik matcha berkelas restauran di rumah Anda.">QUICK VIEW <i class="fas fa-eye ml-1"></i></button>
+                                            <button class="btn btn-premium-primary btn-block font-weight-bold btn-add-to-cart" data-name="Frozen Risol Matcha" data-price="15000">PESAN</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Frozen Ragout -->
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="card card-premium h-100 border-0 shadow-premium">
+                                    <div class="card-badge-top bg-success text-white px-3 py-1 font-weight-bold position-absolute">FROZEN PACK</div>
+                                    <div class="catalog-img-wrap">
+                                        <img src="img/frozenr.jpg" class="card-img-top catalog-img" alt="Frozen Risol Ragout">
+                                    </div>
+                                    <div class="card-body d-flex flex-column justify-content-between p-4">
+                                        <div>
+                                            <h4 class="font-weight-bold text-dark text-uppercase mb-2 card-item-title">Frozen Risol Ragout</h4>
+                                            <p class="text-secondary small card-item-desc">Isian sayur krim susu lembut tradisional yang padat bernutrisi untuk camilan sehat.</p>
+                                        </div>
+                                        <div class="mt-3">
+                                            <div class="price-tag mb-3 font-weight-bold text-danger">Rp 15.000 <span class="text-muted font-weight-normal small">/ pack (isi 5)</span></div>
+                                            <button class="btn btn-outline-premium-card btn-block font-weight-bold btn-detail-trigger mb-2" data-toggle="modal" data-target="#modalDetailRisol" data-name="Frozen Risol Ragout" data-desc="Kemasan kedap udara (vacuum pack) isi 5 pcs. Racikan sayur creamy susu murni & keju gurih terjaga kualitasnya.">QUICK VIEW <i class="fas fa-eye ml-1"></i></button>
+                                            <button class="btn btn-premium-primary btn-block font-weight-bold btn-add-to-cart" data-name="Frozen Risol Ragout" data-price="15000">PESAN</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Frozen Bolognese -->
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="card card-premium h-100 border-0 shadow-premium">
+                                    <div class="card-badge-top bg-success text-white px-3 py-1 font-weight-bold position-absolute">FROZEN PACK</div>
+                                    <div class="catalog-img-wrap">
+                                        <img src="img/frozenr.jpg" class="card-img-top catalog-img" alt="Frozen Risol Bolognese">
+                                    </div>
+                                    <div class="card-body d-flex flex-column justify-content-between p-4">
+                                        <div>
+                                            <h4 class="font-weight-bold text-dark text-uppercase mb-2 card-item-title">Frozen Bolognese</h4>
+                                            <p class="text-secondary small card-item-desc">Saus daging cincang khas western berpadu keju mozzarella siap lumer melar di wajan.</p>
+                                        </div>
+                                        <div class="mt-3">
+                                            <div class="price-tag mb-3 font-weight-bold text-danger">Rp 15.000 <span class="text-muted font-weight-normal small">/ pack (isi 5)</span></div>
+                                            <button class="btn btn-outline-premium-card btn-block font-weight-bold btn-detail-trigger mb-2" data-toggle="modal" data-target="#modalDetailRisol" data-name="Frozen Risol Bolognese" data-desc="Kemasan kedap udara (vacuum pack) isi 5 pcs. Keju mulur khas Italia langsung dari dapur Anda.">QUICK VIEW <i class="fas fa-eye ml-1"></i></button>
+                                            <button class="btn btn-premium-primary btn-block font-weight-bold btn-add-to-cart" data-name="Frozen Risol Bolognese" data-price="15000">PESAN</button>
                                         </div>
                                     </div>
                                 </div>
@@ -255,54 +398,57 @@
             </div>
         </section>
 
+        <!-- SECTION ABOUT -->
         <section id="page-about" class="page-section">
             <div class="container my-5">
-                <div class="section-title-box text-center mb-4">
-                    <h2 class="font-weight-bold" style="letter-spacing: 1px;">BRAND IDENTITY</h2>
-                    <p class="text-muted font-weight-bold small" style="letter-spacing: 2px;">MENGENAL FILOSOFI DAN JAMINAN KUALITAS KAMI</p>
+                <div class="section-title-box text-center mb-5">
+                    <h2 class="font-weight-bold section-main-title">BRAND IDENTITY</h2>
+                    <p class="text-accent font-weight-bold small tracking-widest">MENGENAL FILOSOFI DAN JAMINAN KUALITAS KAMI</p>
                 </div>
-                <div class="row">
+                
+                <div class="row align-items-stretch mb-5">
+                    <!-- KARTU KIRI: BRAND IDENTITY & FAQ -->
                     <div class="col-lg-7 mb-4">
-                        <div class="p-4 bg-white border shadow-sm h-100">
-                            <h3 class="font-weight-bold text-black border-bottom pb-2 mb-3" style="font-size: 22px;">DAILY RUBY PEKANBARU</h3>
+                        <div class="p-4 bg-white border-0 shadow-premium h-100 card-rounded d-flex flex-column justify-content-between">
+                            <div>
+                                <h3 class="font-weight-bold text-dark border-bottom pb-2 mb-3" style="font-size: 22px;">DAILY RUBY PEKANBARU</h3>
+                                
+                                <p class="font-weight-bold text-success text-uppercase mb-3 highlight-popover" style="cursor: pointer; font-size: 13px; letter-spacing: 1px;" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-title="Detail Komitmen Higienis" data-content="Semua bahan baku kami dicuci bersih, diolah higienis tanpa menyentuh langsung, serta dikemas kedap udara (vacuum pack) demi menjaga kualitas kesegaran rasa.">
+                                    <i class="fas fa-certificate mr-2 text-accent"></i> 100% Halal, Higienis, & Tanpa Pengawet Buatan <i class="far fa-question-circle text-muted small"></i>
+                                </p>
+                                
+                                <p class="text-secondary text-left small font-weight-medium" style="line-height: 1.7; color: var(--text-muted) !important;">
+                                    Kami berkomitmen penuh menyajikan jajanan kuliner risoles kelas premium dengan standar kebersihan tertinggi di Kota Pekanbaru. Setiap adonan kulit dan isian kami racik segar setiap harinya tanpa melibatkan bahan pengawet berbahaya demi memberikan kebaikan konsumsi keluarga Anda.
+                                </p>
+                            </div>
                             
-                            <p class="font-weight-bold text-success text-uppercase mb-3 highlight-popover" 
-                               style="cursor: pointer; font-size: 13px; letter-spacing: 1px;"
-                               data-toggle="popover" 
-                               data-trigger="hover" 
-                               data-placement="bottom"
-                               data-title="Detail Komitmen Higienis" 
-                               data-content="Semua bahan baku kami dicuci bersih, diolah higienis tanpa menyentuh langsung, serta dikemas kedap udara (vacuum pack) demi menjaga kualitas kesegaran rasa.">
-                                <i class="fas fa-certificate mr-2"></i> 100% Halal, Higienis, & Tanpa Pengawet Buatan <i class="far fa-question-circle text-muted small"></i>
-                            </p>
-                            
-                            <p class="text-dark text-justify small font-weight-medium" style="line-height: 1.6;">Kami berkomitmen penuh menyajikan jajanan kuliner risoles kelas premium dengan standar kebersihan tertinggi di Kota Pekanbaru. Setiap adonan kulit dan isian kami racik segar setiap harinya tanpa melibatkan bahan pengawet berbahaya demi memberikan kebaikan konsumsi keluarga Anda.</p>
-                            
-                            <h5 class="mt-4 font-weight-bold text-black text-uppercase mb-3" style="font-size: 14px; letter-spacing: 1px;"><i class="fas fa-question-circle text-warning mr-2"></i> Pertanyaan Umum (FAQ)</h5>
-                            <div id="faqAccordion">
-                                <div class="faq-item border mb-2">
-                                    <div class="faq-header p-3 bg-light" id="heading1">
-                                        <button class="btn btn-block text-left text-black font-weight-bold d-flex justify-content-between align-items-center border-0 bg-transparent p-0" data-toggle="collapse" data-target="#faqCollapse1" style="font-size: 13px;">
-                                            <span>Apakah Menyediakan Varian Frozen / Mentah Beku?</span>
-                                            <i class="fas fa-chevron-down faq-icon"></i>
-                                        </button>
-                                    </div>
-                                    <div id="faqCollapse1" class="collapse show" aria-labelledby="heading1" data-parent="#faqAccordion">
-                                        <div class="faq-body p-3 bg-white text-secondary small">
-                                            Tentu saja! Kami menyediakan produk frozen dalam kemasan vacuum pack aman yang dapat bertahan di dalam freezer hingga 2 minggu lamanya tanpa merusak cita rasa asli produk.
+                            <div class="mt-4">
+                                <h5 class="font-weight-bold text-dark text-uppercase mb-3" style="font-size: 13px; letter-spacing: 1px;"><i class="fas fa-question-circle text-warning mr-2"></i> Pertanyaan Umum (FAQ)</h5>
+                                <div id="faqAccordion">
+                                    <div class="faq-item mb-2">
+                                        <div class="faq-header p-3" id="heading1">
+                                            <button class="btn btn-block text-left text-dark font-weight-bold d-flex justify-content-between align-items-center border-0 bg-transparent p-0" data-toggle="collapse" data-target="#faqCollapse1" style="font-size: 13px;">
+                                                <span>Apakah Menyediakan Varian Frozen / Mentah Beku?</span>
+                                                <i class="fas fa-chevron-down faq-icon"></i>
+                                            </button>
+                                        </div>
+                                        <div id="faqCollapse1" class="collapse show" aria-labelledby="heading1" data-parent="#faqAccordion">
+                                            <div class="faq-body pb-4 pt-2 px-3 bg-white text-secondary small text-left" style="line-height: 1.6;">
+                                                Tentu saja! Kami menyediakan produk frozen dalam kemasan vacuum pack aman yang dapat bertahan di dalam freezer hingga 2 minggu lamanya tanpa merusak cita rasa asli produk.
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="faq-item border mb-2">
-                                    <div class="faq-header p-3 bg-light" id="heading2">
-                                        <button class="btn btn-block text-left text-black font-weight-bold d-flex justify-content-between align-items-center border-0 bg-transparent p-0" data-toggle="collapse" data-target="#faqCollapse2" style="font-size: 13px;">
-                                            <span>Menerima Pesanan Acara Besar / Katering?</span>
-                                            <i class="fas fa-chevron-down faq-icon"></i>
-                                        </button>
-                                    </div>
-                                    <div id="faqCollapse2" class="collapse" aria-labelledby="heading2" data-parent="#faqAccordion">
-                                        <div class="faq-body p-3 bg-white text-secondary small">
-                                            Ya, kami melayani pesanan partai besar untuk katering rapat, snack box arisan, pernikahan, maupun kumpul keluarga dengan konfirmasi pesanan H-2 acara.
+                                    <div class="faq-item mb-2">
+                                        <div class="faq-header p-3" id="heading2">
+                                            <button class="btn btn-block text-left text-dark font-weight-bold d-flex justify-content-between align-items-center border-0 bg-transparent p-0" data-toggle="collapse" data-target="#faqCollapse2" style="font-size: 13px;">
+                                                <span>Menerima Pesanan Acara Besar / Katering?</span>
+                                                <i class="fas fa-chevron-down faq-icon"></i>
+                                            </button>
+                                        </div>
+                                        <div id="faqCollapse2" class="collapse" aria-labelledby="heading2" data-parent="#faqAccordion">
+                                            <div class="faq-body pb-4 pt-2 px-3 bg-white text-secondary small text-left" style="line-height: 1.6;">
+                                                Ya, kami melayani pesanan partai besar untuk katering rapat, snack box arisan, pernikahan, maupun kumpul keluarga dengan konfirmasi pesanan H-2 acara.
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -310,34 +456,74 @@
                         </div>
                     </div>
                     
+                    <!-- KARTU KANAN: STORE HOURS -->
                     <div class="col-lg-5 mb-4">
-                        <div class="alert alert-dark shadow-sm text-center h-100 d-flex flex-column justify-content-center p-4 bg-dark text-white border-0 rounded-0 m-0">
+                        <div class="store-hours-card shadow-premium text-center h-100 d-flex flex-column justify-content-center p-4 text-white border-0 m-0">
                             <div class="mb-2"><i class="fas fa-store-alt fa-2x text-warning"></i></div>
                             <h4 class="font-weight-bold tracking-wider text-warning mb-1" style="letter-spacing: 2px;">STORE HOURS</h4>
-                            <p class="text-white-50 text-uppercase small mb-3">Setiap Hari Tanpa Libur</p>
-                            <div class="time-display-box border border-warning py-3 rounded mx-auto w-75">
-                                <h3 class="font-weight-bold text-white m-0" style="font-size: 2rem;">08:00</h3>
-                                <p class="m-0 text-warning font-weight-bold small">SAMPAI</p>
-                                <h3 class="font-weight-bold text-white m-0" style="font-size: 2rem;">22:00</h3>
-                                <p class="m-0 text-white-50 font-weight-bold small">WIB</p>
+                            <p class="text-white-50 text-uppercase small mb-4">Setiap Hari Tanpa Libur</p>
+                            
+                            <div class="time-display-box py-3 px-2 mx-auto w-100 d-flex align-items-center justify-content-center">
+                                <span class="font-weight-bold text-white m-0 tracking-tight" style="font-size: 2.2rem;">08:00</span>
+                                <span class="mx-3 text-warning font-weight-bold" style="font-size: 0.9rem; letter-spacing: 1px;">SAMPAI</span>
+                                <span class="font-weight-bold text-white m-0 tracking-tight" style="font-size: 2.2rem;">22:00</span>
+                                <span class="ml-2 text-white-50 font-weight-bold small" style="font-size: 0.8rem; align-self: flex-end; margin-bottom: 8px;">WIB</span>
                             </div>
-                            <p class="mt-3 mb-0 text-muted font-weight-bold" style="font-size: 10px;">*Pemesanan khusus disarankan langsung via WhatsApp sebelum jam operasional berakhir.</p>
+                            
+                            <p class="mt-4 mb-0 store-hours-footnote font-weight-medium">
+                                *Pemesanan khusus disarankan langsung via WhatsApp sebelum jam operasional berakhir.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row text-center justify-content-center mt-5">
+                    <div class="col-12 mb-4">
+                        <h4 class="font-weight-bold text-uppercase text-dark" style="letter-spacing: 1px; font-size: 1.2rem;">Mengapa Memilih Daily Ruby?</h4>
+                        <hr class="accent-line">
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card card-feature h-100 p-4 border-0 shadow-premium bg-white">
+                            <div class="icon-wrap mb-3">
+                                <i class="fas fa-cookie-bite text-warning fa-3x icon-spin-hover"></i>
+                            </div>
+                            <h5 class="font-weight-bold text-dark" style="font-size: 15px;">Bahan Premium</h5>
+                            <p class="text-muted small mb-0">Hanya menggunakan bahan baku pilihan segar berkualitas tinggi di setiap adonan produk.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card card-feature h-100 p-4 border-0 shadow-premium bg-white">
+                            <div class="icon-wrap mb-3">
+                                <i class="fas fa-hand-sparkles text-success fa-3x icon-spin-hover"></i>
+                            </div>
+                            <h5 class="font-weight-bold text-dark" style="font-size: 15px;">Higienis & Bersih</h5>
+                            <p class="text-muted small mb-0">Proses pembuatan yang steril dan kemasan kedap udara menjamin kebersihan maksimal.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card card-feature h-100 p-4 border-0 shadow-premium bg-white">
+                            <div class="icon-wrap mb-3">
+                                <i class="fas fa-shipping-fast text-danger fa-3x icon-spin-hover"></i>
+                            </div>
+                            <h5 class="font-weight-bold text-dark" style="font-size: 15px;">Selalu Fresh</h5>
+                            <p class="text-muted small mb-0">Produk dibuat segar setiap harinya demi menjaga kerenyahan rasa yang konsisten.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- SECTION CONTACT & LOCATION -->
         <section id="page-contact" class="page-section">
             <div class="container my-5">
-                <div class="section-title-box text-center mb-4">
-                    <h2 class="font-weight-bold" style="letter-spacing: 1px;">CONTACT & LOCATION</h2>
-                    <p class="text-muted font-weight-bold small" style="letter-spacing: 2px;">HUBUNGI ADMIN ATAU KUNJUNGI OUTLET KAMI LANGSUNG</p>
+                <div class="section-title-box text-center mb-5">
+                    <h2 class="font-weight-bold section-main-title">CONTACT & LOCATION</h2>
+                    <p class="text-accent font-weight-bold small tracking-widest">HUBUNGI ADMIN ATAU KUNJUNGI OUTLET KAMI LANGSUNG</p>
                 </div>
                 <div class="row">
                     <div class="col-md-6 mb-4">
-                        <div class="card p-4 shadow-sm h-100 rounded-0 border">
-                            <h4 class="font-weight-bold text-black border-bottom pb-2 mb-3" style="font-size: 16px; letter-spacing: 1px;"><i class="far fa-paper-plane mr-2"></i>FORMULIR DIGITAL</h4>
+                        <div class="card p-4 shadow-premium border-0 h-100 card-rounded">
+                            <h4 class="font-weight-bold text-black border-bottom pb-2 mb-3" style="font-size: 16px; letter-spacing: 1px;"><i class="far fa-paper-plane mr-2 text-accent"></i>FORMULIR DIGITAL</h4>
                             
                             <div id="contactAlert" class="alert alert-success font-weight-bold text-center small d-none mb-3">
                                 <i class="fas fa-check-circle text-success mr-1"></i> Formulir tervalidasi! Data pemesanan Anda berhasil diteruskan ke admin.
@@ -346,12 +532,12 @@
                             <form id="formKontak" novalidate>
                                 <div class="form-group">
                                     <label class="font-weight-bold text-black small text-uppercase" for="nama">Nama Lengkap :</label>
-                                    <input type="text" class="form-control rounded-0" id="nama" required placeholder="Masukkan nama lengkap Anda...">
+                                    <input type="text" class="form-control" id="nama" required placeholder="Masukkan nama lengkap Anda...">
                                     <div class="invalid-feedback text-danger font-weight-bold small">Nama lengkap wajib diisi secara valid!</div>
                                 </div>
                                 <div class="form-group">
                                     <label class="font-weight-bold text-black small text-uppercase" for="keperluan">Kategori Keperluan :</label>
-                                    <select class="form-control rounded-0 custom-select" id="keperluan">
+                                    <select class="form-control custom-select" id="keperluan">
                                         <option value="Pertanyaan Umum">Pertanyaan Umum Seputar Produk</option>
                                         <option value="Pemesanan Acara">Pemesanan Acara / Katering Snack Box</option>
                                         <option value="Kemitraan">Penawaran Kemitraan / Reseller Frozen</option>
@@ -359,32 +545,33 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="font-weight-bold text-black small text-uppercase" for="pesan">Detail Pesan / Daftar Order :</label>
-                                    <textarea class="form-control rounded-0" id="pesan" rows="3" required placeholder="Tulis rincian pesanan Anda atau poin pertanyaan di sini..."></textarea>
+                                    <textarea class="form-control" id="pesan" rows="3" required placeholder="Tulis rincian pesanan Anda atau poin pertanyaan di sini..."></textarea>
                                     <div class="invalid-feedback text-danger font-weight-bold small">Kolom isi detail pesan tidak boleh kosong!</div>
                                 </div>
-                                <button type="submit" class="btn btn-dark btn-block font-weight-bold py-2 mt-4 rounded-0 shadow-solid-sm" id="btnSubmit">
+                                <button type="submit" class="btn btn-premium-primary btn-block font-weight-bold py-3 mt-4" id="btnSubmit">
                                     <span id="btnText">KIRIM FORMULIR <i class="fas fa-paper-plane ml-1"></i></span>
                                 </button>
                             </form>
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
-                        <div class="card p-4 bg-light shadow-sm h-100 d-flex flex-column justify-content-between rounded-0 border">
+                        <div class="card p-4 bg-light shadow-premium border-0 h-100 d-flex flex-column justify-content-between card-rounded">
                             <div>
-                                <h4 class="font-weight-bold text-black border-bottom pb-2 mb-3" style="font-size: 16px; letter-spacing: 1px;"><i class="fas fa-id-card mr-2"></i>OFFICIAL INQUIRY</h4>
+                                <h4 class="font-weight-bold text-black border-bottom pb-2 mb-4" style="font-size: 16px; letter-spacing: 1px;"><i class="fas fa-id-card mr-2 text-accent"></i>OFFICIAL INQUIRY</h4>
                                 <ul class="list-unstyled font-weight-bold text-dark text-uppercase" style="font-size: 11px; letter-spacing: 0.5px;">
                                     <li class="mb-3 d-flex align-items-start"><i class="fas fa-map-marker-alt text-danger mr-3 mt-1 fa-lg"></i> <span>Alamat: Jl. Kartama, Gg. Merpati Perumahan Villa Katama Blok B9, Pekanbaru, Riau</span></li>
                                     <li class="mb-3"><i class="fab fa-instagram text-danger mr-3 fa-lg"></i> Instagram: @dailyruby12</li>
-                                    <li class="mb-3"><i class="fas fa-envelope text-muted mr-3 fa-lg"></i> Email Resmi: qaniaafq@gmail.com</li>
+                                    <li class="mb-3"><i class="fas fa-envelope text-muted mr-3 fa-lg"></i> Email Resmi: kebabdara@gmail.com</li>
                                 </ul>
-                                
-                                <a href="https://wa.me/6282177845467" class="btn btn-success btn-block font-weight-bold text-white py-2 my-3 rounded-0" target="_blank" style="font-size: 13px;">
+                                <a href="https://wa.me/6285371646103" class="btn btn-success btn-block font-weight-bold text-white py-3 my-3 btn-rounded shadow-sm" target="_blank" style="font-size: 13px;">
                                     <i class="fab fa-whatsapp mr-2 fa-lg"></i>HUBUNGI VIA WHATSAPP CHAT
                                 </a>
                             </div>
-                            
-                            <div class="embed-responsive embed-responsive-21by9 border shadow-sm mt-2">
-                                <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.6917758364853!2d101.43120617377519!3d-0.45663733535978135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1m3!2s101.4312!2d-0.4566!5e0!3m2!1sid!2sid!4v1716000000000!5m2!1sid!2sid" allowfullscreen="" loading="lazy"></iframe>
+                            <div class="embed-responsive embed-responsive-16by9 rounded-xl overflow-hidden shadow-sm border position-relative" style="border-radius: 12px;">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Risoles+dan+peyek+homemade+RUBY" target="_blank" class="d-block h-100 w-100 position-absolute daily-map-overlay" title="Klik untuk buka rute di Google Maps" style="z-index: 2; cursor: pointer;">
+                                    <div class="w-100 h-100" style="background: transparent;"></div>
+                                </a>
+                                <iframe class="embed-responsive-item" src="https://maps.google.com/maps?q=Risoles%20dan%20peyek%20homemade%20RUBY%2C%20Pekanbaru&t=&z=18&ie=UTF8&iwloc=B&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                         </div>
                     </div>
@@ -394,10 +581,11 @@
 
     </main>
 
+    <!-- MODAL DETAIL -->
     <div class="modal fade" id="modalDetailRisol" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content rounded-0 border">
-                <div class="modal-header bg-black text-white rounded-0 py-2">
+            <div class="modal-content border-0 shadow-premium card-rounded overflow-hidden">
+                <div class="modal-header text-white py-3">
                     <h6 class="modal-title font-weight-bold text-uppercase" id="modalNamaProduk">Nama Produk</h6>
                     <button type="button" class="close text-white border-0 bg-transparent" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -406,20 +594,86 @@
                 <div class="modal-body p-4 bg-white">
                     <p id="modalDescProduk" class="text-dark small text-justify" style="line-height: 1.6;">Isi deskripsi...</p>
                 </div>
-                <div class="modal-footer bg-light rounded-0 py-1">
-                    <button type="button" class="btn btn-sm btn-dark font-weight-bold rounded-0" data-dismiss="modal">CLOSE VIEW</button>
+                <div class="modal-footer bg-light py-2">
+                    <button type="button" class="btn btn-sm btn-premium-dark font-weight-bold px-3 py-2" data-dismiss="modal">CLOSE VIEW</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer class="bg-black text-white text-center py-4">
+    <!-- MODAL KERANJANG BELANJA (CART) -->
+    <div class="modal fade" id="modalCart" tabindex="-1" role="dialog" aria-labelledby="modalCartLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content border-0 shadow-premium card-rounded overflow-hidden">
+                <div class="modal-header text-white py-3">
+                    <h5 class="modal-title font-weight-bold text-uppercase" id="modalCartLabel"><i class="fas fa-shopping-cart mr-2 text-warning"></i> Keranjang Belanja Anda</h5>
+                    <button type="button" class="close text-white border-0 bg-transparent" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body p-4 bg-white">
+                    <div class="table-responsive">
+                        <table class="table table-hover text-center align-middle" style="font-size: 14px;">
+                            <thead>
+                                <tr>
+                                    <th class="font-weight-bold text-uppercase border-top-0">Nama Produk</th>
+                                    <th class="font-weight-bold text-uppercase border-top-0" style="width: 150px;">Harga Satuan</th>
+                                    <th class="font-weight-bold text-uppercase border-top-0" style="width: 130px;">Jumlah</th>
+                                    <th class="font-weight-bold text-uppercase border-top-0" style="width: 150px;">Subtotal</th>
+                                    <th class="font-weight-bold text-uppercase border-top-0" style="width: 80px;">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cart-table-body">
+                                <!-- Data pesanan diisi via JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="cart-empty-msg" class="text-center py-4 text-muted font-italic">
+                        Keranjang masih kosong. Yuk, tambahkan risol favoritmu!
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between align-items-center px-2">
+                        <h5 class="font-weight-bold text-uppercase mb-0">Total Pembelian:</h5>
+                        <h4 class="font-weight-bold text-danger mb-0" id="cart-total-price">Rp 0</h4>
+                    </div>
+                    
+                    <!-- Form Tambahan Informasi Pengiriman -->
+                    <div class="mt-4 p-4 info-shipping-box">
+                        <h6 class="font-weight-bold text-uppercase text-dark mb-3"><i class="fas fa-truck mr-2 text-accent"></i> Informasi Pengiriman</h6>
+                        <div class="form-row">
+                            <div class="form-group col-md-6 mb-0">
+                                <label class="font-weight-bold small text-uppercase">Nama Pemesan :</label>
+                                <input type="text" id="cart-buyer-name" class="form-control" placeholder="Nama Anda..." required>
+                            </div>
+                            <div class="form-group col-md-6 mb-0 mt-3 mt-md-0">
+                                <label class="font-weight-bold small text-uppercase">Metode Penyerahan :</label>
+                                <select id="cart-delivery-method" class="form-control custom-select">
+                                    <option value="Ambil Sendiri">Ambil Sendiri di Outlet</option>
+                                    <option value="Kirim Kurir / Ojol">Kirim via Kurir (Ongkir ditanggung Pembeli)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer bg-light py-3 d-flex justify-content-between">
+                    <button type="button" class="btn btn-outline-premium-card font-weight-bold px-4 py-2" data-dismiss="modal">Lanjut Belanja</button>
+                    <button type="button" class="btn btn-success font-weight-bold px-4 py-2 btn-rounded shadow-sm" id="btn-checkout-whatsapp">
+                        LAKUKAN PEMESANAN <i class="fab fa-whatsapp ml-1"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Modern -->
+    <footer class="text-white text-center py-4">
         <div class="container">
-            <p class="m-0 font-weight-bold text-warning tracking-widest text-uppercase small">WAN MUHAMMAD ARIEL RAVASYACH • NIM: 25110241</p>
+            <p class="m-0 font-weight-bold tracking-widest text-uppercase small text-accent">WAN MUHAMMAD ARIEL RAVASYACH • NIM: 25110241</p>
             <p class="m-0 text-white-50 text-uppercase tracking-wider small mt-1">UAS Pemrograman Web Desain 2 • AMIK MAHAPUTRA RIAU</p>
         </div>
     </footer>
 
+    <!-- JS Core -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
